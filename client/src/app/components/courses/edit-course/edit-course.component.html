@@ -1,0 +1,68 @@
+<div class="user-form-container">
+  <div class="breadcrumb">
+    <span>Courses</span> / <span>Edit Course</span>
+  </div>
+
+  <div class="form-grid" style="padding-bottom: 0px;">
+    <div class="image-placeholder">
+
+     
+      @if(selectedCourse.picture){
+      <img style="border-radius: 10px;" [src]="selectedCourse.picture" alt="Profile Pic" width="200" height="200">
+      <label for="file-input" class="upload-label">
+        <mat-icon class="icon">edit</mat-icon>
+        <input type="file" id="file-input" (change)="onFileSelected($event)" hidden>
+      </label>
+      }
+      @else {
+      <label for="file-input" class="upload-label">
+        <mat-icon class="icon">photo_camera</mat-icon>
+        <span>upload</span>
+      </label>
+
+      }
+
+    </div>
+    <div class="form-section" style="display:flex; flex-direction:column; gap: 20px; padding-top: 0px;">
+      <h6 style="font-weight: bold; font-family: sans-serif; color: #074693;">Course Information</h6>
+
+      <div style="display: flex; gap: 20px;">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [placeholder]="selectedCourse.coursename" [(ngModel)]="selectedCourse.coursename" required="true">
+        </div>
+        <div class="form-group">
+          <label>Abbreviation</label>
+          <input type="text" [placeholder]="selectedCourse.abbreviation" [(ngModel)]="selectedCourse.abbreviation" required>
+        </div>
+      </div>
+      <div style="display: flex; gap: 20px;">
+
+        <div class="form-group">
+          <label>Teacher</label>
+          <select [(ngModel)]="selectedCourse.teacher" required style="width: 180px;">
+            <option value="">Choose a Teacher</option>
+
+            @for (tutor of teachers; track tutor) {
+
+            <option [value]="tutor.id">{{tutor.firstName +" "+ tutor.lastName}}</option>
+            }
+
+
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Course ID</label>
+          <input type="text" [placeholder]="selectedCourse.id" [(ngModel)]="selectedCourse.id" required
+            disabled="true">
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <button class="save-button" (click)="editCourse()">Edit Course</button>
+
+
+  </div>

@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.warning{
+  --mdc-snackbar-container-color: #eab04b; 
+}
+
+.success{
+  --mdc-snackbar-container-color: #0da112; 
+}
+
+.error{
+  --mdc-snackbar-container-color: #cd0808; 
+}

@@ -1,0 +1,63 @@
+<div class="user-form-container">
+    <div class="breadcrumb">
+      <span>Courses</span> / <span>View Course</span>
+    </div>
+  
+    <div class="form-grid" style="padding-bottom: 0px;">
+      <div class="image-placeholder">
+
+
+        @if(course.picture){
+            
+            <img [src]="course.picture" width="200px" height="200px" style="border-radius: 10px;" [alt]="course.coursename+' Picture'">
+        }
+        @else{
+            <label for="file-input" class="upload-label">
+                <mat-icon class="icon">photo_camera</mat-icon>
+                <span>upload</span>
+              </label>
+        }
+      
+      </div>
+      
+  
+      <div class="form-section" style="display:flex; flex-direction:column; gap: 20px; padding-top: 0px;">
+        <h6 style="font-weight: bold; font-family: sans-serif; color: #074693;">Course Information</h6>
+  
+        <div style="display: flex; gap: 20px;">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Enter Course Name" [value]="course.coursename" required="true" disabled="true">
+          </div>
+          <div class="form-group">
+            <label>Abbreviation</label>
+            <input type="text" placeholder="Enter Abbreviation"  [value]="course.abbreviation" required  disabled="true">
+          </div>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+  
+          <div class="form-group" >
+                        <label>Teacher</label >
+            <select  [value]=""  disabled="true" style="width: 180px;">
+              @for (people of course.tutor; track people) {
+              
+                <option [value]="people.id" >{{people.firstName +" "+ people.lastName}}</option>
+              }
+            
+            
+            </select>
+            </div>
+
+            <div class="form-group" >
+                <label>Course ID</label>
+                <input type="text" placeholder="Enter Course Name" [value]="course.id" required="true" disabled="true">
+              </div>
+          </div>
+         
+  
+      </div>
+  </div>
+  
+    
+  
+  </div>

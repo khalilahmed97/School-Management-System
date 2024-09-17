@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="header">
+        <h5>Assignments</h5>
+        
+    </div>
+    <div class="header_search">
+        <nav style="display: flex;align-items: center;">
+                Home / All Assignments
+        </nav>
+      
+        <div class="search_add">
+            <input type="text" placeholder="Search by course name" [(ngModel)]="search" (input)="getCourses()" />
+        
+            <button class="add_course_btn" (onclick)="addCourse()">    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add" style="color:white"></mat-icon> Add a New Course</button>
+       
+    </div>
+    </div>
+    
+
+    <div style="display: flex; width: 100%;">
+        <div style="background-color: #11101D; width: 20px; border-top-left-radius: 5px; border-bottom-left-radius: 5px;"></div>
+        <ag-grid-angular class="ag-theme-quartz" [pagination]="pagination" [paginationPageSize]="paginationSize" style="height: 300px; width:100%" [rowData]="rowData" [columnDefs]="colDefs" />
+    </div>
+   
+</div>

@@ -1,0 +1,108 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.role-selection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.role {
+    flex: 1;
+    padding: 10px;
+}
+
+.role input {
+    display: none;
+}
+
+.role label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+.role label:hover {
+    border-color: #aaa;
+}
+
+.role input:checked + label {
+    border-color: #007bff;
+    background-color: #eaf4ff;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.student-icon {
+    background-image: url('../../assets/student.png');
+}
+
+.faculty-icon {
+    background-image: url('../../assets/teacher.png');
+}
+
+.staff-icon {
+    background-image: url('../../assets/admin.png');
+}
+
+span {
+    display: block;
+    font-size: 1em;
+    color: #333;
+}
+
+.continue-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.continue-button:hover {
+    background-color: #0056b3;
+}
